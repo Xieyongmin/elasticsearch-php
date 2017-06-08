@@ -1475,13 +1475,13 @@ class Client
         }
 
         if (is_string($var)) {
-            if (strlen($var) === 0) {
+            if (strlen(trim($var)) === 0) {
                 throw new InvalidArgumentException("$name cannot be an empty string");
             }
         }
 
         if (is_array($var)) {
-            if (strlen(implode("", $var)) === 0) {
+            if (strlen(trim(implode("", $var))) === 0) {
                 throw new InvalidArgumentException("$name cannot be an array of empty strings");
             }
         }
